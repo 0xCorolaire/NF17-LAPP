@@ -5,15 +5,11 @@
     ; charset=UTF-8" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
     <title>Société De Chemins de Fer Admin</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
     <body>
-      <div class="container text-center">
-        <h1 class="display-1">Vous avez modifé la gare !</h1>
-      </div>
       <?php
-      include_once '../lib/dbconnect.php';
+      include_once '../../lib/dbconnect.php';
 
       //Déclaration des variables
       $verif=true;
@@ -33,7 +29,7 @@
         echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champs</p>";
         echo "</div>";
         $verif=false;
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>";
       }
       $contrainte = "SELECT * FROM gare";
       $contr = $connexion->prepare($contrainte);
@@ -48,7 +44,7 @@
             echo "<p>Le nom de la gare a déjà été rentré pour cette ville</p>";
             echo "</div>";
             $verif=false;
-            echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+            echo "<a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>";
             return;
           }
         }
@@ -64,9 +60,9 @@
         echo "</div>";
         echo "<div class='alert alert-success container' role='alert'>";
         echo "<p>Vous avez bien modifié la gare !</p>";
-        echo "</div>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block menu3'>Revenir au menu principal administrateur</button></a>";
-        echo "<a href='modification_gare.php' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block ajout_gare3'>Modifier une autre gare</button></a>";
+        echo "</div>
+        <a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+        <a href='consulter_gares.php' class='btn btn-secondary btn-lg btn-block'>Revenir a la gestion des gares</a>";
       }
 
 

@@ -13,5 +13,5 @@ admin.addEventListener('click', () => {
   window.location = "admin/admin.html";
 });
 client.addEventListener('click', () => {
-  window.location = "client/client.html";
+  window.location = "index.php";
 });

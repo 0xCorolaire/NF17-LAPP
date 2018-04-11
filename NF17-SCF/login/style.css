@@ -1,0 +1,234 @@
+.login_body{
+	overflow: hidden;
+}
+.login_background{
+	position: absolute;
+	top: 0;
+	left: 20%;
+	width: 80%;
+	z-index: -1;
+}
+.login_cercle{
+	position: absolute;
+	top: -30%;
+	height: 160%;
+	left: -15%;
+	width: 50%;
+	background-color: #ffffff;
+	border-radius: 50%;
+	z-index: -1;
+}
+.login_titre_login{
+	border-bottom: solid 2px #73cfe6;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.8em;
+	position: absolute;
+	top: 19%;
+	left: 8%;
+	width: 15%;
+	height: 5%;
+	color: #73cfe6;
+}
+.login_champ_nom{
+	border: none;
+	border-bottom: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 33%;
+	left: 8%;
+	width: 15%;
+	height: 4%;
+	color: #74665f;
+}
+.login_champ_prenom{
+	border: none;
+	border-bottom: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 40%;
+	left: 8%;
+	width: 15%;
+	height: 4%;
+	color: #74665f;
+}
+.login_champ_num{
+	border: none;
+	border-bottom: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 47%;
+	left: 8%;
+	width: 15%;
+	height: 4%;
+	color: #74665f;
+}
+.login_champ_valider{
+	position: absolute;
+	top: 58%;
+	left: 8%;
+	width: 15%;
+	height: 5%;
+	color:#ffffff;
+	background-color: #55de96;
+	border: none;
+	border-radius: 18px 18px 18px 18px; 
+	font-size: 1em;
+}
+.login_champ_valider:hover{
+	background-color: #479a98;
+}
+.login_info_erreurs{
+	font-family: 'roboto', sans-serif;
+	font-size: 1.2em;
+	position: absolute;
+	top: 69%;
+	left: 8%;
+	width: 15%;
+	color: #e02121;
+	text-align: center;
+}
+.login_titre_inscription{
+	font-family: 'roboto', sans-serif;
+	font-size: 1em;
+	position: absolute;
+	top: 95%;
+	left: 13%;
+	color: #73cfe6;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inscription_background{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80%;
+	z-index: -1;
+}
+.inscription_cercle{
+	position: absolute;
+	top: -30%;
+	height: 160%;
+	left: 65%;
+	width: 50%;
+	background-color: #ffffff;
+	border-radius: 50%;
+	z-index: -1;
+}
+.inscription_titre_inscription{
+	border-bottom: solid 2px #73cfe6;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.8em;
+	position: absolute;
+	top: 19%;
+	left: 76%;
+	width: 15%;
+	height: 5%;
+	color: #73cfe6;
+}
+.inscription_champ_nom{
+	border: none;
+	border-bottom: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 33%;
+	left: 76%;
+	width: 15%;
+	height: 4%;
+	color: #74665f;
+}
+.inscription_champ_prenom{
+	border: none;
+	border-bottom: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 40%;
+	left: 76%;
+	width: 15%;
+	height: 4%;
+	color: #74665f;
+}
+.inscription_champ_num{
+	border: none;
+	border-bottom: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 47%;
+	left: 76%;
+	width: 15%;
+	height: 4%;
+	color: #74665f;
+}
+.inscription_champ_adresse{
+	border: solid 1px #e5e5e5;
+	outline: none;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.1em;
+	position: absolute;
+	top: 56%;
+	left: 76%;
+	width: 15%;
+	height: 10%;
+	color: #74665f;
+}
+.inscription_champ_valider{
+	position: absolute;
+	top: 71%;
+	left: 76%;
+	width: 15%;
+	height: 5%;
+	color:#ffffff;
+	background-color: #55de96;
+	border: none;
+	border-radius: 18px 18px 18px 18px; 
+	font-size: 1em;
+}
+.inscription_champ_valider:hover{
+	background-color: #479a98;
+}
+.inscription_info_erreurs{
+	font-family: 'roboto', sans-serif;
+	font-size: 1.2em;
+	position: absolute;
+	top: 81%;
+	left: 76%;
+	width: 15%;
+	color: #e02121;
+	text-align: center;
+}
+.inscription_titre_connexion{
+	font-family: 'roboto', sans-serif;
+	font-size: 1em;
+	position: absolute;
+	top: 95%;
+	left: 83%;
+	color: #73cfe6;
+	text-decoration: none;
+}
