@@ -50,7 +50,7 @@
           <input type="text" class="form-control" name="Telephone_Lieu" placeholder="Téléphone du lieu">
         </div>
         <button type="submit" class="btn btn-primary">Ajouter le lieu</button>
-        <a href='consulter_lieux.php' class='btn btn-secondary'>Retour à la gestion des lieux</a>
+        <a href='../admin.html' class='btn btn-secondary'>Retour au menu principal administrateur</a>
 
       </form>
   </body>

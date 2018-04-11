@@ -63,7 +63,7 @@
         echo "<p>Vous venez d'ajouter la gare !</p>";
         echo "</div>
         <a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
-        <a href='consulter_gares.php' class='btn btn-secondary btn-lg btn-block'>Revenir a la gestion des gares</a>";
+        <a href='ajout_gare.html' class='btn btn-secondary btn-lg btn-block'>Ajouter une autre gare</a>";
       }
 
       $connexion=null;

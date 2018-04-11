@@ -9,31 +9,30 @@
     <?php
       include_once '../../lib/dbconnect.php';
       //variables
-      $gare = $_POST["Selection_Gare"];
-      $nom = $_POST["Nom_Lieu"];
-      $adresse = $_POST["Adresse_Lieu"];
-      $telephone = $_POST["Telephone_Lieu"];
-      $type = $_POST["Type_Lieu"];
+      $numero = $_POST['Numero_train'];
+      $type = $_POST['Selection_t_train'];
 
-      if(empty($nom)||empty($adresse)||empty($telephone)||empty($type)||$gare == 0){
+      if($type == '0'||empty($numero)){
         echo "<div class='container text-center'>
                 <h1 class='display-1'>Erreur !</h1>
               </div>
               <div class='alert alert-danger' role='alert'>
-                <p>Vous avez oublié de remplir un champ</p>
+                <p>Vous avez rentré un train incorrect !</p>
               </div>
-              <a href='ajout_lieu.php' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau le lieu</button></a>
+              <a href='ajout_train.php' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau le train</button></a>
               <a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }else {
-        $sql = "INSERT INTO lieu_interet(nom_lt,adresse_lt,telephone_lt,type_lieu,fk_gare) VALUES ('$nom', '$adresse', '$telephone', '$type', $gare)";
+        $sql = "INSERT INTO train(numero_train,fk_type) VALUES ($numero,'$type')";
         $result = $connexion->prepare($sql);
         $result->execute();
-        echo "<div class='container text-center'>
-                <h1 class='display-1'>Vous avez ajouté le lieu d'intérêt</h1>
-              </div>
-              <p>Vous venez d'ajouter un lieu d'intérêt !</p>
+        echo "<div class='container text-center'>";
+        echo "<h1 class='display-1'>Vous avez ajouté un train !</h1>";
+        echo "</div>";
+        echo "<div class='alert alert-success container' role='alert'>";
+        echo "<p>Vous venez d'ajouter le train !</p>";
+        echo "</div>
               <a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>
-              <a href='ajout_lieu.php' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Ajouter un autre lieu </button></a>";
+              <a href='ajout_train.php' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Ajouter un autre train </button></a>";
       }
       $connexion=null;
      ?>
