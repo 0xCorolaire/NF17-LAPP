@@ -5,12 +5,11 @@
     ; charset=UTF-8" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
     <title>Société De Chemins de Fer Admin</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
     <?php
-    include_once '../lib/dbconnect.php';
+      include_once '../../lib/dbconnect.php';
       //Pas besoin de rentrer l'id de la gare ( auto increment );
 
       //Déclaration des variables
@@ -26,11 +25,11 @@
         echo "<h1 class='display-1'>Erreur !</h1>";
         echo "</div>";
         echo "<div class='alert alert-danger container' role='alert'>";
-        echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champs</p>";
+        echo "<p class='mx-auto px-auto'>Vous avez oublié de remplir un champ</p>";
         echo "</div>";
         $verif=false;
-        echo "<a href='ajout_gare.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau la gare</button></a>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+        <a href='ajout_gare.php' class='btn btn-secondary btn-lg btn-block'>Saisir a nouveau la gare</a>";
       }
       //Si la gare rentrée d'une ville a le même nom qu'un autre gare de cette même ville
       $contrainte = "SELECT * FROM gare";
@@ -45,14 +44,14 @@
           echo "<p>Le nom de la gare a déjà été rentré pour cette ville</p>";
           echo "</div>";
           $verif=false;
-          echo "<a href='ajout_gare.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau la gare</button></a>";
-          echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+          echo "<a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+          <a href='consulter_gares.php' class='btn btn-secondary btn-lg btn-block'>Saisir a nouveau la gare</a>";
           return;
         }
       }
 
 
-      //Implémentation dans la BDD
+      //Insertion dans la BDD
       if($verif){
         $sql = "INSERT INTO gare(nom,ville,adresse,zone_horaire) VALUES ('$nom','$ville','$adresse','$TZ')";
         $result = $connexion->prepare($sql);
@@ -62,9 +61,9 @@
         echo "</div>";
         echo "<div class='alert alert-success container' role='alert'>";
         echo "<p>Vous venez d'ajouter la gare !</p>";
-        echo "</div>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block menu3'>Revenir au menu principal administrateur</button></a>";
-        echo "<a href='ajout_gare.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block ajout_gare3'>Ajouter une autre gare</button></a>";
+        echo "</div>
+        <a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+        <a href='consulter_gares.php' class='btn btn-secondary btn-lg btn-block'>Revenir a la gestion des gares</a>";
       }
 
       $connexion=null;
