@@ -13,7 +13,7 @@
       <h1 class="display-1">Vous avez ajouté un train</h1>
     </div>
     <?php
-      include_once '../lib/dbconnect.php';
+      include_once '../../lib/dbconnect.php';
 
       //Déclaration des variables
       $nom = $_POST['Nom_t_train'];
@@ -32,7 +32,7 @@
         echo "</div>";
         $verif=false;
         echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau un type</button></a>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }
 
       if($nbp<$nbp1&&$verif){
@@ -44,7 +44,7 @@
         echo "</div>";
         $verif=false;
         echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau un type</button></a>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }
       if($verif){
         $contrainte = "SELECT * FROM type_train";
@@ -60,7 +60,7 @@
             echo "</div>";
             $verif=false;
             echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Saisir à nouveau un type</button></a>";
-            echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+            echo "<a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
             return;
           }
         }
@@ -76,7 +76,7 @@
         echo "<div class='alert alert-success container' role='alert'>";
         echo "<p>Vous venez d'ajouter le type de train !</p>";
         echo "</div>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block menu3'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block menu3'>Revenir au menu principal administrateur</button></a>";
         echo "<a href='ajout_t_train.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block ajout_gare3'>Ajouter un autre type de train</button></a>";
       }
       $connexion=null;
