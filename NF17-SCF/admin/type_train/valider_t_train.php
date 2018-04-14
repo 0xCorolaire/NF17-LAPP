@@ -29,7 +29,7 @@
         echo "</div>";
         $verif=false;
         echo "<a href='consulter_t_train.php' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Modifier un autre type</button></a>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }
       if($nbpl<$prempl&&$verif){
         echo "<div class='container text-center'>";
@@ -40,7 +40,7 @@
         echo "</div>";
         $verif=false;
         echo "<a href='consulter_t_train.php' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Modifier un autre type</button></a>";
-        echo "<a href='admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
+        echo "<a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-secondary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>";
       }
 
 

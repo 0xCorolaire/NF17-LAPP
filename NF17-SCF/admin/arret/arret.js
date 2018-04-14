@@ -20,3 +20,11 @@ $('.modifier').click(function() {
   });
   window.location.href = "modifier_arret.php?id="+texts[0];
 });
+
+$( document ).ready(function() {
+  $('#Selection_Train').change(function () {
+    var param = 'id=' + $(this).val();
+      $('#Selection_arrêt').load('ajout2_arret.php', param);
+      console.log(param);
+  });
+});

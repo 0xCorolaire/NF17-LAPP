@@ -5,15 +5,12 @@
     ; charset=UTF-8" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
     <title>Société De Chemins de Fer Admin</title>
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-  </head>
   <body>
     <div class="container text-center">
       <h1 class="display-1">Modifiez l'arrêt</h1>
     </div>
+    <form class='container' method='POST' action='valider_arret.php'>
     <?php
       include_once '../../lib/dbconnect.php';
 
@@ -24,31 +21,56 @@
 
       //Création du tableau pour récupérer les infos
       $row = $result->fetch(PDO::FETCH_ASSOC);
+      $sql2 = "SELECT gare.nom FROM gare WHERE gare.id_gare='".$row['fk_gare']."'";
+      $result2 = $connexion->prepare($sql2);
+      $result2->execute();
+      $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+
+
+      //Info sur l'arret modifié
+      //train
+      echo "<div class='form-group row'>";
+      echo "<label for='statictrain' class='col-sm-2 col-form-label'>Numéro du train :</label>";
+      echo "<div class='col-sm-10'>";
+      echo "<input type='text' readonly class='form-control-plaintext' id='statictrain' name='statictrain' value='".$row['fk_train']."'>";
+      echo "</div>";
+      echo "</div>";
+      //gare
+      echo "<div class='form-group row'>";
+      echo "<label for='staticgare' class='col-sm-2 col-form-label'>Nom de la gare :</label>";
+      echo "<div class='col-sm-10'>";
+      echo "<input type='text' readonly class='form-control-plaintext' id='staticgare' name='staticgare' value='".$row2['nom']."'>";
+      echo "</div>";
+      echo "</div>";
+      //idgare
+      echo "<div class='form-group row'>";
+      echo "<label for='idgare' class='col-sm-2 col-form-label'>Id de la gare :</label>";
+      echo "<div class='col-sm-10'>";
+      echo "<input type='text' readonly class='form-control-plaintext' id='idgare' name='idgare' value='".$row['fk_gare']."'>";
+      echo "</div>";
+      echo "</div>";
+      //ordre arret
+      echo "<div class='form-group row'>";
+      echo "<label for='staticordre' class='col-sm-2 col-form-label'>Arret numéro :</label>";
+      echo "<div class='col-sm-10'>";
+      echo "<input type='text' readonly class='form-control-plaintext' id='staticordre' name='staticordre' value='".$row['ordre']."'>";
+      echo "</div>";
+      echo "</div>";
+
 
       //Heure arrivée
-      echo "<div class='well'>
-        <div id='datetimepicker3' class='input-append'>
-          <input data-format='hh:mm:ss' type='text' name = 'heurea'></input>
-          <span class='add-on'>
-            <i data-time-icon='icon-time' data-date-icon='icon-calendar'>
-            </i>
-          </span>
-        </div>
-      </div>";
+      echo  "<div class='form-group'>";
+      echo "<label for='heurear'>Heure d'arrivée</label>";
+      echo "<input type='time' step='2' class='form-control' id='heurear' name='heurear' value='".$row['heure_arrivee']."'>";
+      echo "</div>";
+
       //Heure départ
-      echo "<div class='well'>
-        <div id='datetimepicker4' class='input-append'>
-          <input data-format='hh:mm:ss' type='text' name = 'heured'></input>
-          <span class='add-on'>
-            <i data-time-icon='icon-time' data-date-icon='icon-calendar'>
-            </i>
-          </span>
-        </div>
-      </div>";
+      echo  "<div class='form-group'>";
+      echo "<label for='heurede'>Heure de départ</label>";
+      echo "<input type='time' step='2' class='form-control' id='heurede' name='heurede' value='".$row['heure_depart']."'>";
+      echo "</div>";
 
-
-
-    //  echo "<input type='hidden' class='form-control' id='t' name='Nomt_t_base' value='".$row['nom']."'>";
+      echo "<input type='hidden' class='form-control' id='t' name='idgare' value='".$row['fk_gare']."'>";
 
       echo "<button type='submit' class='btn btn-warning'>Valider la modification</button>
       <a href='gerer_arret.php' class='btn btn-secondary'>Retour à la gestion des arrêts</a>";
@@ -58,21 +80,5 @@
       $connexion=null;
     ?>
     <script src="../../lib/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript"
-     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript"
-     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-    </script>
-    <script type="text/javascript"
-     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-    </script>
-    <script type="text/javascript">
-      $(function() {
-        $('#datetimepicker3').datetimepicker({
-          pickDate: false
-        });
-      });
-    </script>
   </body>
 </html>
