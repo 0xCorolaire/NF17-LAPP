@@ -7,3 +7,4 @@ $password = '';
 $connexion = new PDO('mysql:host=localhost;dbname=scf;charset=utf8', $user, $password);
 
 ?>
+

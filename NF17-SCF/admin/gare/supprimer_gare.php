@@ -10,6 +10,10 @@ $gare = $_POST['id'];
 $sql = "DELETE FROM lieu_interet WHERE fk_gare='$gare'";
 $result = $connexion->prepare($sql);
 $result->execute();
+$sql = "DELETE FROM arret WHERE arret.fk_gare='$gare'";
+$result = $connexion->prepare($sql);
+$result->execute();
+
 $sql = "DELETE FROM gare WHERE gare.id_gare='$gare'";
 $result = $connexion->prepare($sql);
 $result->execute();

@@ -7,25 +7,20 @@
   </head>
   <body>
     <div class="container text-center">
-      <h1 class="display-1">Gérer des lieux d'intérêt</h1>
+      <h1 class="display-1">Gérer les types de train</h1>
     </div>
-    <!-- <div class='row'>
-      <div class='col-5 offset-1'> -->
-        <h3 class="float-left">Liste de lieux d'intérêt</h3>
-      <!-- </div>
-      <div class='col-5'> -->
-        <a href='ajout_lieu.php' class='btn btn-success float-right'>Ajouter un lieu d'intérêt</a>
-      <!-- </div>
-    </div> -->
+    <!-- <div class='row'> -->
+      <!-- <div class='col-5 offset-1'> -->
+        <h3 class="float-left">Liste des types</h3>
+      <!-- </div> -->
+    <!-- </div> -->
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Nom</th>
-          <th>Adresse</th>
-          <th>Téléphone</th>
-          <th>Type</th>
-          <th>Gare</th>
-          <th>Actions</th>
+          <th>Nom type</th>
+          <th>Nombre de places</th>
+          <th>Places en 1ère classe</th>
+          <th>Vitesse</th>
         </tr>
       </thead>
       <tbody>
@@ -33,16 +28,15 @@
         <?php
         include_once '../../lib/dbconnect.php';
 
-        $sql = "SELECT * FROM lieu_interet, gare WHERE gare.id_gare = lieu_interet.fk_gare ORDER BY fk_gare";
+        $sql = "SELECT * FROM type_train ORDER BY nom";
         $result = $connexion->prepare($sql);
         $result->execute();
         while ($row=$result->fetch(PDO::FETCH_ASSOC)){
           echo "<tr>
-                  <td>".$row['nom_lt']."</td>
-                  <td>".$row['adresse_lt']."</td>
-                  <td>".$row['telephone_lt']."</td>
-                  <td>".$row['type_lieu']."</td>
                   <td>".$row['nom']."</td>
+                  <td>".$row['nb_places']."</td>
+                  <td>".$row['premiere_classe']."</td>
+                  <td>".$row['vitesse']."</td>
                   <td>
                     <a class='btn btn-warning modifier'>Modifier</a>
                     <a class='btn btn-danger supprimer'>Supprimer</a>
@@ -56,6 +50,6 @@
     </table>
     <a href='../admin.html' class='btn-lg white'><button type='button' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</button></a>
     <script src="../../lib/jquery-3.3.1.min.js"></script>
-    <script src="lieu.js"></script>
+    <script src="type_train.js"></script>
   </body>
 </html>

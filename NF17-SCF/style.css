@@ -1,0 +1,189 @@
+.menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 9%;
+	background-color: #ffffff;
+	z-index: 2;
+}
+.logo{
+	position: fixed;
+	top: 2%;
+	left: 10%;
+	height: 5%;
+}
+.compte{
+	position: fixed;
+	top: 2%;
+	left: 89%;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #305c9b;
+	text-align: center;
+	font-size: 1.5em;
+	color: #ffffff;
+	font-family: 'roboto', sans-serif;
+	line-height: 170%;
+	cursor: pointer;
+}
+.detail_compte{
+	position: fixed;
+	top: 8.5%;
+	left: 80%;
+	width: 12%;
+	height: 18%;
+	border-radius: 2px;
+	background-color: #ffffff;
+	font-size: 1.2em;
+	padding-left: 10px;
+	padding-top: 15px;
+	text-decoration: none;
+}
+.detail_identite{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 42%;
+	background-color: #efefff;
+	z-index: -1;
+}
+
+
+
+.fond{
+	position: absolute;
+	top: -3%;
+	left: 0;
+	width: 100%;
+}
+.recherche{
+	position: absolute;
+	top: 30%;
+	left: 20%;
+	width: 60%;
+	height: 35%;
+	background-color: #ffffff;
+	opacity: 0.92;
+	border-radius: 6px;
+}
+.titre_recherche{
+	position: absolute;
+	top: 8%;
+	left: 7%;
+	font-size: 2em;
+	color: #6198c7;
+	font-family: 'roboto', sans-serif;
+}
+.recherche_trait{
+	position: absolute;
+	top: 25%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #6198c7;
+}
+.gare_depart{
+	position: absolute;
+	top: 42%;
+	left: 7%;
+	width: 28%;
+	height: 10%;
+	font-size: 1.1em;
+	padding-left: 5px; 
+}
+.gare_arrivee{
+	position: absolute;
+	top: 42%;
+	left: 48%;
+	width: 28%;
+	height: 10%;
+	font-size: 1.1em;
+	padding-left: 5px; 
+}
+.fleche{
+	position: absolute;
+	top: 43%;
+	left: 40%;
+	width: 4%;
+	transform: rotate(90deg);
+}
+.radio_partir_maintenant{
+	position: absolute;
+	top: 67%;
+	left: 8%;
+}
+.partir_maintenant{
+	position: absolute;
+	top: 67%;
+	left: 11%;
+	font-size: 1em;
+	font-family: 'roboto', sans-serif;
+}
+.radio_partir{
+	position: absolute;
+	top: 67%;
+	left: 31%;
+}
+.partir{
+	position: absolute;
+	top: 67%;
+	left: 34%;
+	font-size: 1em;
+	font-family: 'roboto', sans-serif;
+}
+.radio_arrivee{
+	position: absolute;
+	top: 67%;
+	left: 48%;
+}
+.arrivee{
+	position: absolute;
+	top: 67%;
+	left: 51%;
+	font-size: 1em;
+	font-family: 'roboto', sans-serif;
+}
+.date{
+	display: none;
+	position: absolute;
+	top: 82%;
+	left: 8%;
+	width: 15%;
+	height: 9%;
+	font-size: 1em;
+	padding-left: 5px; 
+}
+.heure{
+	display: none;
+	position: absolute;
+	top: 82%;
+	left: 38%;
+	width: 15%;
+	height: 9%;
+	font-size: 1em;
+	padding-left: 5px; 
+}
+.chercher{
+	position: absolute;
+	top: 74%;
+	left: 72%;
+	width: 25%;
+	height: 18%;
+	color:#ffffff;
+	background-color: #6198c7;
+	border: none;
+	border-radius: 6px 6px 6px 6px; 
+	font-size: 1.3em;
+}
+.bouton_connexion{
+	position: absolute;
+	top: 34%;
+	left: 82%;
+	font-size: 1.4em;
+	color: #6198c7;
+	font-family: 'roboto', sans-serif;
+	text-decoration: none;
+}

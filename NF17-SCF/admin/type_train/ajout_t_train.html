@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html
+    ; charset=UTF-8" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <title>Société De Chemins de Fer Admin</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container text-center">
+      <h1 class="display-1">Ajout d'un type de train</h1>
+    </div>
+    <form class='container' method='POST' action='ajouter_t_train.php'>
+      <div class="form-group">
+        <label for="Nom_t_train">Type de train</label>
+        <input type="text" class="form-control" id="Nom_t_train" name="Nom_t_train" placeholder="Type de train">
+      </div>
+      <div class="form-group">
+        <label for="Nombre_Place">Nombre de place</label>
+        <input type="number" class="form-control" id="Nombre_Place" name="Nombre_Place" placeholder="0">
+      </div>
+      <div class="form-group">
+        <label for="Nombre_Place_P">Places en première classe</label>
+        <input type="number" class="form-control" id="Nombre_Place_P" name="Nombre_Place_P" value="0">
+      </div>
+      <div class="form-group">
+        <label for="Vitesse">Vitesse(km/h)</label>
+        <input type="number" class="form-control" id="Vitesse" name="Vitesse" placeholder="100">
+      </div>
+        <button type="submit" class="btn btn-primary">Ajouter le type de train</button>
+        <a href='../admin.html' class='btn btn-primary btn-lg btn-block'>Revenir au menu principal administrateur</a>
+      </form>
+  </body>
+</html>

@@ -13,9 +13,6 @@
       <!-- <div class='col-5 offset-1'> -->
         <h3 class="float-left">Liste de gares</h3>
       <!-- </div> -->
-      <!-- <div class='col-5'> -->
-        <!-- <a href='ajout_gare.html' class='btn btn-success float-right'>Ajouter une gare</a> -->
-      <!-- </div> -->
     <!-- </div> -->
     <table class="table table-striped">
       <thead>
