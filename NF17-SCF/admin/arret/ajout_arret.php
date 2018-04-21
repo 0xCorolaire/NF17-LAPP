@@ -31,7 +31,7 @@
         </div>
         <div id='Selection_arrêt'>
         </div>
-        <button type="submit" class="btn btn-primary">Ajouter l'arrêt'</button>
+        <button type="submit" class="btn btn-primary">Ajouter l'arrêt</button>
         <a href='../admin.html' class='btn btn-secondary'>Retour au menu principal administrateur</a>
       </form>
       <script src="../../lib/jquery-3.3.1.min.js"></script>
