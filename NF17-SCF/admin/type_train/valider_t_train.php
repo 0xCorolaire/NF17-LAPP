@@ -46,7 +46,7 @@
 
       //Implémentation dans la BDD
       if($verif){
-        $sql = "UPDATE type_train SET nom='$nom', nb_places='$nbpl', premiere_classe='$prempl' WHERE type_train.nom='$nombase'";
+        $sql = "UPDATE type_train SET nom='$nom', nb_places='$nbpl', premiere_classe='$prempl', vitesse=$vitesse WHERE type_train.nom='$nombase'";
         $result = $connexion->prepare($sql);
         $result->execute();
         echo "<div class='container text-center'>";

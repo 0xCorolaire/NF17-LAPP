@@ -11,9 +11,9 @@
     </div>
     <form class='container' method='POST' action='ajouter_train.php'>
       <div class='form-group'>
-        <label for='Seleciton_t_train'>Nom de la gare</label>
+        <label for='Seleciton_t_train'>Type de train</label>
         <select class='form-control' id='Selection_t_train' name='Selection_t_train'>
-          <option value="0">Aucune</option>
+          <option value="0">Aucun</option>
           <?php
             include_once '../../lib/dbconnect.php';
             //Requete des types de trains

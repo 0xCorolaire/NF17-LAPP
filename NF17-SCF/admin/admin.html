@@ -21,7 +21,8 @@
         <a class="nav-item nav-link" id="nav-train-tab" data-toggle="tab" href="#nav-train" role="tab" aria-controls="nav-train" aria-selected="false">Administrer un train</a>
         <a class="nav-item nav-link" id="nav-t_train-tab" data-toggle="tab" href="#nav-t_train" role="tab" aria-controls="nav-t_train" aria-selected="false">Administrer un type de train</a>
         <a class="nav-item nav-link" id="nav-arret-tab" data-toggle="tab" href="#nav-arret" role="tab" aria-controls="nav-arret" aria-selected="false">Gérer les arrêts</a>
-        <a class="nav-item nav-link" id="nav-calendrier-tab" data-toggle="tab" href="#nav-calendrier" role="tab" aria-controls="nav-calendrier" aria-selected="false">Programmation des trains</a>
+        <a class="nav-item nav-link" id="nav-calendrier-tab" data-toggle="tab" href="#nav-calendrier" role="tab" aria-controls="nav-calendrier" aria-selected="false">Administrer les calendriers</a>
+        <a class="nav-item nav-link" id="nav-prog-tab" data-toggle="tab" href="#nav-prog" role="tab" aria-controls="nav-prog" aria-selected="false">Programmation des trains</a>
         <a class="nav-item nav-link" id="nav-lieu-tab" data-toggle="tab" href="#nav-lieu" role="tab" aria-controls="nav-lieu" aria-selected="false">Lieux d'interêts</a>
         <a class="nav-item nav-link" id="nav-stat-tab" data-toggle="tab" href="#nav-stat" role="tab" aria-controls="nav-stat" aria-selected="false">Statistiques</a>
       </div>
@@ -41,7 +42,7 @@
         <div class="container">
           <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link" href="train/ajout_train.php" role="tab" aria-selected="true">Ajouter un train</a>
-            <a class="nav-link" href="train/consulter_train.php" role="tab" aria-selected="false">Gerer les train</a>
+            <a class="nav-link" href="train/consulter_train.php" role="tab" aria-selected="false">Gérer les trains</a>
           </div>
         </div>
       </div>
@@ -56,13 +57,25 @@
       <div class="tab-pane fade" id="nav-arret" role="tabpanel" aria-labelledby="nav-arret-tab">
         <div class="container">
           <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link" href="arret/ajout_arret.php" role="tab" aria-selected="true">Ajouter un arrêts</a>
+            <a class="nav-link" href="arret/ajout_arret.php" role="tab" aria-selected="true">Ajouter un arrêt</a>
             <a class="nav-link" href="arret/gerer_arret.php" role="tab" aria-selected="true">Gérer les arrêts</a>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="nav-calendrier" role="tabpanel" aria-labelledby="nav-calendrier-tab">
-        Programmation des trains ici
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="programmation/ajout_calendrier.php" role="tab" aria-selected="true">Ajouter un calendrier</a>
+            <a class="nav-link" href="programmation/consulter_calendriers.php" role="tab" aria-selected="true">Gérer les calendriers</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-prog" role="tabpanel" aria-labelledby="nav-prog-tab">
+        <div class="container">
+          <div class="nav flex-column nav-pills mx-auto text-center p-3 mb-2 bg-warning text-white" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="programmation/consulter_programmations.php" role="tab" aria-selected="true">Gérer les programmations</a>
+          </div>
+        </div>
       </div>
       <div class="tab-pane fade" id="nav-lieu" role="tabpanel" aria-labelledby="nav-lieu-tab">
         <div class="container">
