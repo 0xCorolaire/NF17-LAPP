@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="prog.css">
   </head>
   <body>
-    <div class="container text-center">
-      <h1 class="display-1">Ajout d'un calendrier</h1>
-    </div>
+    <?php
+    if(isset($_GET['id'])){
+      echo'
+      <div class="container text-center">
+      <h1 class="display-1">Ajout d\'un calendrier pour le train n°'.$_GET['id'].'</h1>
+      </div>';
+    }else {
+      echo '<div class="container text-center">
+        <h1 class="display-1">Ajout d\'un calendrier</h1>
+      </div>';
+    }
+    ?>
+
     <form class='container' method='POST' action='ajouter_calendrier.php'>
       <div class="form-group">
         <label for="datedebut">Date début</label>
@@ -56,8 +66,14 @@
           <label for="dimanche">Dimanche</label>
           <input type="checkbox" class="form-control" name="dimanche">
         </div>
+        <?php
+        if(isset($_GET['id'])){
+          echo'
+          <input type="hidden" name="id_train" value="'.$_GET['id'].'">';
+        }
+        ?>
       </div>
-      <button type="submit" class="btn btn-primary">Ajouter le lieu</button>
+      <button type="submit" class="btn btn-primary">Ajouter le calendrier</button>
       <a href='../admin.html' class='btn btn-secondary'>Retour au menu principal administrateur</a>
 
     </form>

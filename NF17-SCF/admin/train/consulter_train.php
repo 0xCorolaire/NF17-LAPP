@@ -19,6 +19,7 @@
         <tr>
           <th>Numéro du train</th>
           <th>Type de train</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>

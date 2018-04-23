@@ -44,6 +44,13 @@
             VALUES ('$datedebut', '$datefin', '$lundi', '$mardi', '$mercredi', '$jeudi', '$vendredi', '$samedi', '$dimanche', '$heure', '$prix')";
           $result = $connexion->prepare($sql);
           $result->execute();
+          if(isset( $_POST['id_train'])){
+            $id_train = $_POST['id_train'];
+            echo  $_POST['id_train'];
+            $id = $connexion->lastInsertId();
+            $inserProg = $connexion->prepare("INSERT INTO `programmation`(`fk_calendrier`, `fk_train`) VALUES (".$id.",".$id_train.");");
+            $inserProg->execute();
+          }
           echo "<div class='container text-center'>
                   <h1 class='display-1'>Vous avez ajouté le calendrier</h1>
                 </div>
