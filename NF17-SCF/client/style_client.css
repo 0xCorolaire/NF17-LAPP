@@ -3,36 +3,348 @@ body{
 	background-color: #f2f4f7;
 	font-family: 'roboto', sans-serif;
 }
-.titre_logement{
-	font-size: 1.2em;
-	margin-top: 2%;
-	margin-left: 23%;
-	margin-bottom: 1%;
+
+/*///// Reservation /////*/
+.reservation_recapitulatif{
+	margin-left: 5%;
+	margin: 0 auto;
+	min-height: 100px;
+	width: 90%;
+	display:flex;
 }
-.box_logement{
-	margin-left: 12%;
-	margin-right: 57%;
-	padding: 10px;
-	background-color: #ffffff; 
-	border: solid 2px #dce3e6;
-	border-radius: 3px;
-	overflow: hidden;
+.reservation_partie_billet{
+  	display:flex;
+  	flex-direction:column;
+  	width: 70%;
 }
-.titre_transport{
-	font-size: 1.2em;
-	margin-top: 2%;
-	margin-left: 69%;
-	margin-bottom: 1%;
+.reservation_partie_paiement{
+  	display:flex;
+  	flex-direction:column;
+  	width: 30%;
 }
-.box_transport{
+.reservation_temps_billet{
+	font-size: 1em;
+	margin-left: 62%;
+}
+.reservation_heure_depart_billet{
+	margin-top: -7%;
+	margin-left: 19%;
+	color: #598ee6;
+}
+.reservation_heure_arrivee_billet{
+	margin-top: -0.6%;
+	margin-left: 19%;
+	color: #598ee6;
+}
+.reservation_depart_billet{
+	margin-top: -2.5%;
+	margin-left: 28%;
+}
+.reservation_arrivee_billet{
+	margin-top: -2.5%;
+	margin-left: 28%;
+	margin-bottom: 1.5%;
+}
+.reservation_gare_depart{
+	margin-top: -2.2%;
+	margin-left: 15%;
+}
+.reservation_gare_arrivee{
+	margin-top: -2.2%;
+	margin-left: 15%;
+	margin-bottom: -6%;
+}
+.reservation_logo_train{
+	margin-left: 52%;
+	width: 4.6%;
+}
+.reservation_train{
+	margin-top: 0.5%;
+	margin-left: 49%;
+	margin-bottom: -3%;
+	font-size: 0.9em;
+}
+.reservation_place{
+	margin-left: 68%;
+	margin-bottom: -2.5%;
+	font-size: 0.9em;
+}
+.reservation_select_classe_train{
+	margin-left: 84%;
+	margin-bottom: 4%;
+}
+.reservation_historique_billet{
+	margin-top: 0%;
 	margin-bottom: 20px;
-	margin-left: 57%;
-	margin-right: 12%;
+	margin-left: 0%;
+	margin-right: 2%;
+	padding: 20px;
+	padding-bottom: 10px;
+	background-color: #ffffff; 
+	border: solid 2px #dce3e6;
+	border-radius: 3px;
+	overflow: hidden;
+}
+#lieu_interet{
+	margin-left: 0%;
+	margin: 0 auto;
+	min-height: 30px;
+	width: 100%;
+	display:flex;
+}
+.reservation_box_assurance{
+	margin: 0%;
+ 	width: 98%;
+  	display:block;
+  	box-sizing: border-box;
+	padding: 5px;
+	background-color: #469790; 
+	border: solid 2px #469790;
+	color: #ffffff;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.reservation_assurance{
+	font-size: 1.1em;
+	margin: 2%;
+	margin-bottom: -2.3%;
+}
+
+
+/* Hide the browser's default checkbox */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 4%;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #e12289;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.box{
+  	margin: 0%;
+ 	width: 96%;
+  	display:block;
+  	box-sizing: border-box;
 	padding: 10px;
 	background-color: #ffffff; 
 	border: solid 2px #dce3e6;
 	border-radius: 3px;
 	overflow: hidden;
+	margin-bottom: 10px;
+}
+.column{
+  	display:flex;
+  	flex-direction:column;
+  	width: 50%;
+}
+.reservation_box_paiement{
+	margin: 0%;
+ 	width: 100%;
+  	display:block;
+  	box-sizing: border-box;
+	background-color: #ffffff; 
+	border: solid 2px #dce3e6;
+	border-radius: 3px;
+	overflow: hidden;
+	padding-bottom: 24px;
+}
+.reservation_bouton_valider{
+	margin-top: 6%;
+	margin-left: 7%;
+	width: 40%;
+	color:#ffffff;
+	background-color: #65c954;
+	border: none;
+	border-radius: 5px 5px 5px 5px; 
+	font-size: 1.3em;
+	text-align: center;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.reservation_bouton_annuler{
+	margin-top: 40%;
+	margin-left: 10%;
+	width: 40%;
+	color:#ffffff;
+	background-color: #dc3c45;
+	border: none;
+	border-radius: 5px 5px 5px 5px; 
+	font-size: 1.3em;
+	text-align: center;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+.reservation_total{
+	width: 100%;
+	color: #ffffff;
+	margin: 0%;
+	text-align: center;
+	font-size: 1.4em;
+	background-color: #469790;
+	padding: 7px;
+}
+.reservation_total_billet{
+	margin-top: 8%;
+	margin-left: 10%;
+	margin-bottom: -20px;
+	color: #888888;
+	font-size: 1.2em;
+}
+.reservation_total_prix_billet{
+	margin-left: 55%;
+	color: #888888;
+	font-size: 1.2em;
+}
+.reservation_total_assurance{
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-bottom: -20px;
+	color: #888888;
+	font-size: 1.2em;
+}
+.reservation_total_prix_assurance{
+	margin-left: 55%;
+	margin-bottom: 8%;
+	color: #888888;
+	font-size: 1.2em;
+}
+.reservation_box_total{
+	margin-left: 7%;
+	width: 80%;
+	height: 20%;
+	background-color: #f2f4f7;
+	font-size: 1.2em;
+	padding: 10px;
+}
+.reservation_box_titre_total{
+	margin-left: 10%;
+	font-size: 1.3em;
+	color: #888888;
+	margin-bottom: -28px;
+	font-weight: bold;
+}
+.reservation_box_prix_total{
+	margin-left: 57%;
+	font-size: 1.3em;
+	color: #469790;
+	font-weight: bold;
+	margin-bottom: -2px;
+}
+.reservation_paiement{
+	margin-left: 10%;
+	margin-top: 0%;
+	margin-bottom: 3%;
+}
+/*///// Fin Reservation /////*/
+
+
+
+
+
+
+
+
+.chercher_gare_depart{
+	margin-top: -3%;
+	margin-left: 20%;
+}
+.chercher_gare_arrivee{
+	margin-top: -3%;
+	margin-left: 20%;
+	margin-bottom: -7%;
+}
+.chercher_logo_train{
+	margin-top: -8%;
+	margin-left: 74%;
+	width: 6.6%;
+}
+.chercher_train{
+	margin-top: 0.5%;
+	margin-left: 68%;
+	margin-bottom: 2%;
+}
+.chercher_temps_billet{
+	font-size: 1em;
+	margin-left: 78%;
+}
+.detail_billet{
+  	display:flex;
+  	flex-direction:column;
+  	width: 63%;
+}
+.tarif2{
+  	display:flex;
+  	flex-direction:column;
+  	width: 18%;
+}
+.tarif1{
+  	display:flex;
+  	flex-direction:column;
+  	width: 18%;
 }
 
 
@@ -68,49 +380,72 @@ body{
 .form_assurance{
 	font-size: 1.2em;
 }
-.check_assurance{
-	margin-left: 43%;
-	margin-right: 0.5%;
-	margin-bottom: 1%;
-	width:20px;
-	height:20px;
-}
-.reservation_assurance{
-	margin-top: 3%;
-	margin-left: 28%;
-	font-size: 1.3em;
-	margin-bottom: 1%
-}
 .bouton_reserver_billet_seconde{
-	margin-left: 77%;
-	width: 5%;
-	height: 8%;
-	color:#ffffff;
-	background-color: #235894;
-	border: none;
+	margin-top: 0%;
+	margin-left: 9%;
+	width: 90%;
+	height: 10%;
+	color:#4e9f68;
+	background-color: #ffffff;
+	border: solid #4e9f68 1px;
 	border-radius: 5px 5px 5px 5px; 
 	font-size: 1.1em;
 	text-align: center;
 	padding-left: 13px;
 	padding-right: 13px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 26%;
+	padding-bottom: 26%;
 	text-decoration: none;
 }
 .bouton_reserver_billet_premiere{
-	margin-left: 1%;
-	width: 5%;
-	height: 8%;
-	color:#ffffff;
-	background-color: #235894;
-	border: none;
+	margin-top: 0%;
+	margin-left: 9%;
+	width: 90%;
+	height: 10%;
+	color:#cc1dec;
+	background-color: #ffffff;
+	border: solid #cc1dec 1px;
 	border-radius: 5px 5px 5px 5px; 
 	font-size: 1.1em;
 	text-align: center;
 	padding-left: 13px;
 	padding-right: 13px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 26%;
+	padding-bottom: 26%;
+	text-decoration: none;
+}
+.bouton_reserver_billet_seconde_correspondance{
+	margin-top: 0%;
+	margin-left: 9%;
+	width: 90%;
+	height: 10%;
+	color:#4e9f68;
+	background-color: #ffffff;
+	border: solid #4e9f68 1px;
+	border-radius: 5px 5px 5px 5px; 
+	font-size: 1.1em;
+	text-align: center;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 50%;
+	padding-bottom: 50%;
+	text-decoration: none;
+}
+.bouton_reserver_billet_premiere_correspondance{
+	margin-top: 0%;
+	margin-left: 9%;
+	width: 90%;
+	height: 10%;
+	color:#cc1dec;
+	background-color: #ffffff;
+	border: solid #cc1dec 1px;
+	border-radius: 5px 5px 5px 5px; 
+	font-size: 1.1em;
+	text-align: center;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 50%;
+	padding-bottom: 50%;
 	text-decoration: none;
 }
 .chercher_historique_trajet{
@@ -121,11 +456,7 @@ body{
 	border-radius: 8px;
 	padding: 8px;
 	padding-bottom: 0;
-	margin-right: 25%;
-}
-.chercher_temps_billet{
-	font-size: 1em;
-	margin-left: 46%;
+	margin-right: 0%;
 }
 .annulation_texte{
 	margin-left: 28%;
@@ -183,6 +514,18 @@ body{
 	border-radius: 3px;
 	overflow: hidden;
 }
+.chercher_billet{
+	margin-bottom: 40px;
+	margin-left: 12%;
+	margin-right: 12%;
+	padding: 20px;
+	padding-bottom: 10px;
+	background-color: #ffffff; 
+	border: solid 2px #dce3e6;
+	border-radius: 3px;
+	overflow: hidden;
+	display:flex;
+}
 .historique_bandeau_annule{
 	width: 140%;
 	margin-left: -21%;
@@ -210,14 +553,34 @@ body{
 	margin-left: 19%;
 	color: #598ee6;
 }
+.chercher_heure_depart_billet{
+	margin-top: -8%;
+	margin-left: 22%;
+	color: #598ee6;
+}
 .historique_depart_billet{
 	margin-top: -1.8%;
 	margin-left: 25%;
+}
+.chercher_depart_billet{
+	margin-top: -2.8%;
+	margin-left: 32%;
 }
 .historique_heure_arrivee_billet{
 	margin-top: -0.6%;
 	margin-left: 19%;
 	color: #598ee6;
+}
+.chercher_heure_arrivee_billet{
+	margin-top: -0.6%;
+	margin-left: 22%;
+	color: #598ee6;
+}
+
+.chercher_arrivee_billet{
+	margin-top: -2.8%;
+	margin-left: 32%;
+	margin-bottom: 2%;
 }
 .historique_arrivee_billet{
 	margin-top: -1.8%;
@@ -279,11 +642,13 @@ body{
 	margin-left: 3%;	
 	color: #888888; 
 }
+
 .historique_gare_arrivee{
 	margin-top: -1.8%;
 	margin-left: 22%;
 	margin-bottom: -5%;
 }
+
 .historique_logo_train{
 	margin-left: 48%;
 	width: 4.6%;

@@ -18,6 +18,14 @@ function format_date_jour_billet($date){
       return $jour_semaine;
    }
 
+
+
+   function lendemain($date){
+      $demain=mktime(0,0,0,substr($date,5,2),substr($date,8,2)+1,substr($date,0,4)); 
+      return date("Y-m-d",$demain); 
+   }
+
+
    function format_date_billet($date){
       $datejr = $date;
       $mois = substr($datejr, 5, 2);

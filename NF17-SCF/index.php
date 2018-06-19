@@ -99,6 +99,8 @@
 		<div class="arrivee">Arrivée à</div>
 		<input type="date" name="date" class="date" id="datepicker" maxlength="10" placeholder="">
 		<input type="date" name="heure" class="heure" maxlength="10" placeholder="" id="heure">
+		<input type="number" name="prix_min" class="prix_min" placeholder="Prix min" min='0'>
+		<input type="number" name="prix_max" class="prix_max" placeholder="Prix max" min='0'>
 		<input type="submit" class="chercher" value="Chercher">
 	</form>
 	<script>

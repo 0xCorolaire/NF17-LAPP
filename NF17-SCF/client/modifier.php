@@ -36,8 +36,6 @@
         else{
           document.getElementById("prix_assurance").innerHTML="0€";
         }
-        prix_billet=(Math.round(prix_billet*100))/100;
-        prix_total=(Math.round(prix_total*100))/100;
         document.getElementById("prix_total_billet").innerHTML=prix_billet+"€";
         document.getElementById("prix_total_total").innerHTML=prix_total+"€";
          
@@ -67,8 +65,6 @@
         else{
           document.getElementById("correspondance_prix_assurance").innerHTML="0€";
         }
-          cprix_billet=(Math.round(cprix_billet*100))/100;
-          cprix_total=(Math.round(cprix_total*100))/100;
           document.getElementById("correspondance_prix_total_billet").innerHTML=cprix_billet+"€";
           document.getElementById("correspondance_prix_total_total").innerHTML=cprix_total+"€";
         }
@@ -91,9 +87,14 @@
       include 'format_donnees.php';
 
       $connexion = new PDO('pgsql:host=tuxa.sme.utc;port=5432;dbname=dbnf17p050', 'nf17p050', 'klfRl2NH');	
+
+$traj=$_POST["traj"];
+      $suppression_trajet = "DELETE FROM trajet WHERE id_trajet='$traj';";
+      $resultset8 = $connexion->prepare($suppression_trajet);
+      $resultset8->execute();
+
+
       $correspondance=$_POST['correspondance'];
-      $place1=rand(10, 50);
-      $place2=rand(10, 50);
       if(!$correspondance){     // billet avec 1 trajet (train direct)
         $gare_depart=$_POST['dep'];  
         $gare_arrivee=$_POST['arr'];
@@ -104,9 +105,10 @@
         $train1=$_POST['train1'];
         $prix_assurance=2;
         $assurance="TRUE";
-        
-        echo "<form class='form_assurance' method='post' action='reserver.php'>
-            <input type='hidden' name='correspondance' value='0'><input type='hidden' name='place1' value='".$place1."'><input type='hidden' name='classe' value='".$classe."'><input type='hidden' name='dep' value='".$gare_depart."'><input type='hidden' name='arr' value='".$gare_arrivee."'><input type='hidden' name='heure_dep' value='".$heure_depart."'><input type='hidden' name='date_dep' value='".$date_depart."'><input type='hidden' name='heure_arr' value='".$heure_arrivee."'><input type='hidden' name='classe' value='2'><input type='hidden' name='train1' value='".$train1."'>";   
+   
+        echo "<form class='form_assurance' method='post' action='reserver2.php'>
+        <input type='hidden' name='billet' value='".$_POST['bill']."'>
+            <input type='hidden' name='correspondance' value='0'><input type='hidden' name='classe' value='".$classe."'><input type='hidden' name='dep' value='".$gare_depart."'><input type='hidden' name='arr' value='".$gare_arrivee."'><input type='hidden' name='heure_dep' value='".$heure_depart."'><input type='hidden' name='date_dep' value='".$date_depart."'><input type='hidden' name='heure_arr' value='".$heure_arrivee."'><input type='hidden' name='classe' value='2'><input type='hidden' name='train1' value='".$train1."'>";   
             
         echo "<div class='reservation_historique_billet'>";      // Info billet
         date_default_timezone_set('Europe/Paris');
@@ -145,7 +147,7 @@
         echo "train n°".$train1;
         echo "</div>";
         echo "<div class='reservation_place'>";
-        echo "place n°".$place1;
+        echo "place n° 132";
         echo "</div>";      // Fin Info Trajet
 
                   
@@ -279,11 +281,11 @@ echo "<div class='reservation_box_assurance'>
         $premiere_classe_dispo_train2=$row4['premiere_classe'];
         $prix_assurance=2;
         $assurance="TRUE";
-
    
-        echo "<form class='form_assurance' method='post' action='reserver.php'>
-        <input type='hidden' name='correspondance' value='1'><input type='hidden' name='place2' value='".$place2."'><input type='hidden' name='place1' value='".$place1."'><input type='hidden' name='classe' value='".$classe."'><input type='hidden' name='dep' value='".$gare_depart."'><input type='hidden' name='mil' value='".$gare_milieu."'><input type='hidden' name='arr' value='".$gare_arrivee."'><input type='hidden' name='heure_dep' value='".$heure_depart."'><input type='hidden' name='date_dep' value='".$date_depart."'><input type='hidden' name='heure_mil1' value='".$heure_milieu1."'><input type='hidden' name='heure_mil2' value='".$heure_milieu2."'><input type='hidden' name='heure_arr' value='".$heure_arrivee."'><input type='hidden' name='classe' value='2'><input type='hidden' name='train1' value='".$train1."'><input type='hidden' name='train2' value='".$train2."'>
-        <input type='hidden' name='correspondance' value='1'><input type='hidden' name='place2' value='".$place2."'><input type='hidden' name='place1' value='".$place1."'><input type='hidden' name='classe' value='".$classe."'><input type='hidden' name='dep' value='".$gare_depart."'><input type='hidden' name='mil' value='".$gare_milieu."'><input type='hidden' name='arr' value='".$gare_arrivee."'><input type='hidden' name='heure_dep' value='".$heure_depart."'><input type='hidden' name='date_dep' value='".$date_depart."'><input type='hidden' name='heure_mil1' value='".$heure_milieu1."'><input type='hidden' name='heure_mil2' value='".$heure_milieu2."'><input type='hidden' name='heure_arr' value='".$heure_arrivee."'><input type='hidden' name='classe' value='1'><input type='hidden' name='train1' value='".$train1."'><input type='hidden' name='train2' value='".$train2."'>";
+        echo "<form class='form_assurance' method='post' action='reserver2.php'>
+        <input type='hidden' name='billet' value='".$_POST['bill']."'>
+        <input type='hidden' name='correspondance' value='1'><input type='hidden' name='classe' value='".$classe."'><input type='hidden' name='dep' value='".$gare_depart."'><input type='hidden' name='mil' value='".$gare_milieu."'><input type='hidden' name='arr' value='".$gare_arrivee."'><input type='hidden' name='heure_dep' value='".$heure_depart."'><input type='hidden' name='date_dep' value='".$date_depart."'><input type='hidden' name='heure_mil1' value='".$heure_milieu1."'><input type='hidden' name='heure_mil2' value='".$heure_milieu2."'><input type='hidden' name='heure_arr' value='".$heure_arrivee."'><input type='hidden' name='classe' value='2'><input type='hidden' name='train1' value='".$train1."'><input type='hidden' name='train2' value='".$train2."'>
+        <input type='hidden' name='correspondance' value='1'><input type='hidden' name='classe' value='".$classe."'><input type='hidden' name='dep' value='".$gare_depart."'><input type='hidden' name='mil' value='".$gare_milieu."'><input type='hidden' name='arr' value='".$gare_arrivee."'><input type='hidden' name='heure_dep' value='".$heure_depart."'><input type='hidden' name='date_dep' value='".$date_depart."'><input type='hidden' name='heure_mil1' value='".$heure_milieu1."'><input type='hidden' name='heure_mil2' value='".$heure_milieu2."'><input type='hidden' name='heure_arr' value='".$heure_arrivee."'><input type='hidden' name='classe' value='1'><input type='hidden' name='train1' value='".$train1."'><input type='hidden' name='train2' value='".$train2."'>";
    
         echo "<div class='reservation_historique_billet'>";
         date_default_timezone_set('Europe/Paris');
@@ -321,7 +323,7 @@ echo "<div class='reservation_box_assurance'>
         echo $type_train1." n°".$train1;
         echo "</div>";
         echo "<div class='reservation_place'>";
-        echo "place n°".$place1;
+        echo "place n° 132";
         echo "</div>";
 
         if($classe==1){
@@ -359,7 +361,7 @@ echo "<div class='reservation_box_assurance'>
         echo "</div>";
 
         echo "<div class='reservation_place'>";
-        echo "place n°".$place2;
+        echo "place n° 132";
         echo "</div>";
 
         if($classe==1){

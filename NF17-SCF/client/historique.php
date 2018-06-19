@@ -26,8 +26,7 @@
    
 $connexion = new PDO('pgsql:host=tuxa.sme.utc;port=5432;dbname=dbnf17p050', 'nf17p050', 'klfRl2NH');	
 
-$billet="SELECT billet.id_billet AS billet, billet.assurance, billet.etat, MIN(trajet.date_depart) FROM billet, trajet, voyageur_regulier, voyageur_occasionel WHERE trajet.fk_billet=billet.id_billet AND billet.fk_voyocc='2' AND billet.fk_voyocc=voyageur_occasionel.id_voyageur AND (voyageur_occasionel.nom='".$_SESSION['nom']."' AND voyageur_occasionel.prenom='".$_SESSION['prenom']."' AND voyageur_occasionel.numero_tel='".$_SESSION['telephone']."') OR (voyageur_regulier.nom='".$_SESSION['nom']."' AND voyageur_regulier.prenom='".$_SESSION['prenom']."' AND voyageur_regulier.numero_tel='".$_SESSION['telephone']."') GROUP BY billet.id_billet ORDER BY min DESC;";
-
+$billet="SELECT billet.id_billet AS billet, billet.assurance, billet.etat, MIN(trajet.date_depart) FROM billet, trajet, voyageur_regulier, voyageur_occasionel WHERE trajet.fk_billet=billet.id_billet AND billet.fk_voyocc=voyageur_occasionel.id_voyageur AND (voyageur_occasionel.nom='".$_SESSION['nom']."' AND voyageur_occasionel.prenom='".$_SESSION['prenom']."' AND voyageur_occasionel.numero_tel='".$_SESSION['telephone']."') OR (voyageur_regulier.nom='".$_SESSION['nom']."' AND voyageur_regulier.prenom='".$_SESSION['prenom']."' AND voyageur_regulier.numero_tel='".$_SESSION['telephone']."') GROUP BY billet.id_billet ORDER BY min DESC;";
 $resultset1 = $connexion->prepare($billet);
 $resultset1->execute();
 $billet=1;
@@ -44,7 +43,7 @@ FROM trajet
             JOIN type_train
                ON train.fk_type=type_train.nom
 WHERE trajet.fk_billet='$row1[billet]'
-ORDER BY trajet.date_depart ASC;";
+ORDER BY trajet.id_trajet ASC;";
  
 $arrivee="SELECT gare.nom, trajet.date_arrivee, arret.heure_arrivee
 FROM trajet
@@ -57,7 +56,7 @@ FROM trajet
             JOIN type_train
                ON train.fk_type=type_train.nom
 WHERE trajet.fk_billet='$row1[billet]'
-ORDER BY trajet.date_depart ASC;";
+ORDER BY trajet.id_trajet ASC;";
 
 $resultset2 = $connexion->prepare($depart);
 $resultset2->execute();
@@ -81,20 +80,17 @@ while ($row2 = $resultset2->fetch(PDO::FETCH_ASSOC)) {      // Afficher chaque t
       echo "</div>";
       if(($row2['date_depart']>date("Y-m-d"))&&($row1['etat']!="annulé")){
          if($row1['assurance'])
-            echo "<a href='annulation.php?id_billet=".$row1['billet']."' class='historique_modifier_billet'>Modifier</a>";
+            echo "<a href='modification.php?id_billet=".$row1['billet']."' class='historique_modifier_billet'>Modifier</a>";
          else
-            echo "<a href='annulation.php?id_billet=".$row1['billet']."' class='historique_modifier_billet' style='visibility:hidden;'>Modifier</a>";
+            echo "<a href='modification.php?id_billet=".$row1['billet']."' class='historique_modifier_billet' style='visibility:hidden;'>Modifier</a>";
          echo "<a href='annulation.php?id_billet=".$row1['billet']."' class='historique_annuler_billet'>Annuler</a>";
       }
       else
-         echo "<a href='annulation.php?id_billet=".$row1['billet']."' class='historique_modifier_billet' style='visibility:hidden;'>Modifier</a>";
+         echo "<a href='modification.php?id_billet=".$row1['billet']."' class='historique_modifier_billet' style='visibility:hidden;'>Modifier</a>";
          echo "<a href='annulation.php?id_billet=".$row1['billet']."' class='historique_annuler_billet' style='visibility:hidden;'>Annuler</a>";
       
       echo "<div id='historique_heure_arrivee_billet".$billet."' class='historique_heure_arrivee_billet'></div>";
       echo "<div id='historique_arrivee_billet".$billet."' class='historique_arrivee_billet'></div>";
-
-      
-      
       
    }
    echo "<div class='historique_trajet'>";

@@ -40,6 +40,7 @@
 	padding-left: 10px;
 	padding-top: 15px;
 	text-decoration: none;
+	font-family: 'roboto', sans-serif;
 }
 .detail_identite{
 	position: absolute;
@@ -51,8 +52,22 @@
 	z-index: -1;
 }
 
-
-
+.prix_min{
+	position: absolute;
+	top: 8%;
+	left: 65%;
+	width: 12%;
+	height: 11%;
+	font-size: 1.2em;
+}
+.prix_max{
+	position: absolute;
+	top: 8%;
+	left: 80%;
+	width: 12%;
+	height: 11%;
+	font-size: 1.2em;
+}
 .fond{
 	position: absolute;
 	top: -3%;

@@ -12,10 +12,10 @@
 <?php
 	$connexion = new PDO('pgsql:host=tuxa.sme.utc;port=5432;dbname=dbnf17p050', 'nf17p050', 'klfRl2NH');	
 	$correspondance=$_POST['correspondance'];
-	
+
 
 	////////////// Si trajet direct il faut créer 1 billet et 1 trajet //////////////
-	$place1=$_POST['place1'];
+$billllet=$_POST['billet'];
 	if(!$correspondance){
 		$gare_depart=$_POST['dep'];
 	   	$gare_arrivee=$_POST['arr'];
@@ -83,12 +83,12 @@
 
 
 		//////////////////////////// Création du billet ////////////////////////////
-		$insertion_billet = "INSERT INTO billet(id_billet, fk_voyocc,fk_voyreg,mode_paiment,assurance,etat,date_depart,date_arrivee) VALUES ($id_billet, $id_voyageur,$id_voyageur2,'$paiement',$assurance, 'payé','$date_depart','$date_depart')";
+		$insertion_billet = "INSERT INTO billet(id_billet, fk_voyocc,fk_voyreg,mode_paiment,assurance,etat,date_depart,date_arrivee) VALUES ($billllet, $id_voyageur,$id_voyageur2,'$paiement',$assurance, 'payé','$date_depart','$date_depart')";
         $resultset8 = $connexion->prepare($insertion_billet);
 		$resultset8->execute();
 
 		//////////////////////////// Création du trajet ////////////////////////////
-		$insertion48 = "INSERT INTO trajet(fk_billet,fk_arret_depart,fk_arret_arrivee,classe, date_depart, date_arrivee, place) VALUES ($id_billet,$row4[id_arret],$row7[id_arret], $classe1, '$date_depart','$date_depart', '$place1')";
+		$insertion48 = "INSERT INTO trajet(fk_billet,fk_arret_depart,fk_arret_arrivee,classe, date_depart, date_arrivee) VALUES ($billllet,$row4[id_arret],$row7[id_arret], $classe1, '$date_depart','$date_depart')";
 		$resultset48 = $connexion->prepare($insertion48);
 		$resultset48->execute();
 
@@ -103,7 +103,6 @@
 	////////////// Si trajet avec correspondance, il faut créer 1 billet et 2 trajets //////////////
 
 	else{
-	   $place2=$_POST['place2'];
 	   $gare_depart=$_POST['dep'];
 	   $gare_milieu=$_POST['mil'];
 	   $gare_arrivee=$_POST['arr'];
@@ -190,17 +189,17 @@
 
 
 		//////////////////////////// Création du billet ////////////////////////////
-		$insertion_billet = "INSERT INTO billet(id_billet, fk_voyocc,fk_voyreg,mode_paiment,assurance,etat,date_depart,date_arrivee) VALUES ($id_billet, $id_voyageur,$id_voyageur2,'$paiement',$assurance, 'payé','$date_depart','$date_depart')";
+		$insertion_billet = "INSERT INTO billet(id_billet, fk_voyocc,fk_voyreg,mode_paiment,assurance,etat,date_depart,date_arrivee) VALUES ($billllet, $id_voyageur,$id_voyageur2,'$paiement',$assurance, 'payé','$date_depart','$date_depart')";
         $resultset8 = $connexion->prepare($insertion_billet);
 		$resultset8->execute();
 
 		//////////////////////////// Création du trajet 1 ////////////////////////////
-		$insertion48 = "INSERT INTO trajet(fk_billet,fk_arret_depart,fk_arret_arrivee,classe, date_depart, date_arrivee, place) VALUES ($id_billet,$row4[id_arret],$row5[id_arret], $classe1, '$date_depart','$date_depart', '$place1')";
+		$insertion48 = "INSERT INTO trajet(fk_billet,fk_arret_depart,fk_arret_arrivee,classe, date_depart, date_arrivee) VALUES ($billllet,$row4[id_arret],$row5[id_arret], $classe1, '$date_depart','$date_depart')";
 		$resultset48 = $connexion->prepare($insertion48);
 		$resultset48->execute();
 
 		//////////////////////////// Création du trajet 2 ////////////////////////////
-		$insertion46 = "INSERT INTO trajet(fk_billet,fk_arret_depart,fk_arret_arrivee,classe, date_depart, date_arrivee, place) VALUES ($id_billet,$row6[id_arret],$row7[id_arret], $classe2, '$date_depart','$date_depart', '$place2')";
+		$insertion46 = "INSERT INTO trajet(fk_billet,fk_arret_depart,fk_arret_arrivee,classe, date_depart, date_arrivee) VALUES ($billllet,$row6[id_arret],$row7[id_arret], $classe2, '$date_depart','$date_depart')";
 		$resultset46 = $connexion->prepare($insertion46);
 		$resultset46->execute();
 
